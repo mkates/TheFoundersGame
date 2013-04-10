@@ -1,0 +1,42 @@
+
+.main-container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+.header {
+	margin: 30px 0;
+}
+.logo {
+	float: left;
+}
+.nav {
+	float: right;
+	margin-top: 13px;
+	opacity: .8;
+}
+.prompt {
+	background: white;
+	color: #444;
+	text-align: center;
+	overflow: hidden;
+	padding-bottom: 0px;
+}
+.prompt p {
+	margin: 20px;
+}
+.prompt .question {
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: 500;
+	margin: 20px; 
+}
+.great {
+	color: green;
+}
+.fail {
+	color: red;
+}
+.nerd {
+	float: left;
+	width: 200px;
+}
