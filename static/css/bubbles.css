@@ -1,0 +1,214 @@
+.bubblex {
+    width: 60px;
+    height: 60px;
+    background: url("../images/money.png");
+    border-radius: 200px;
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
+    position: relative;
+}
+
+.x1 {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.8;
+    -webkit-animation: moveclouds 6s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 6s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 6s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.x2 {
+    left: -15px;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.6;
+    -webkit-animation: moveclouds 10s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 10s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -o-animation: moveclouds 10s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+.x3 {
+    left: -10px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.5;
+    -webkit-animation: moveclouds 8s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 8s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 8s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+.x4 {
+    left: -25px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.9;
+    -webkit-animation: moveclouds 8s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 8s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -o-animation: moveclouds 8s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+.x5 {
+    left: -20px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.2; 
+    -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -o-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+}
+.x6 {
+    left: -18px;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0.5;
+    -webkit-animation: moveclouds 11s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 11s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 11s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+.x7 {
+    left: -5px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.9;
+    -webkit-animation: moveclouds 8s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 8s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -o-animation: moveclouds 8s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+.x8 {
+    left: -25px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.2; 
+    -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -o-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+}
+.x9 {
+    left: -23px;
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0.2; 
+    -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -o-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes moveclouds { 
+    0% { 
+        top: 500px;
+    }
+    100% { 
+        top: -500px;
+    }
+}
+
+@-webkit-keyframes sideWays { 
+    0% { 
+        margin-left:0px;
+    }
+    100% { 
+        margin-left:50px;
+    }
+}
+
+@-moz-keyframes moveclouds {     
+    0% { 
+        top: 500px;
+    }
+
+    100% { 
+        top: -500px;
+    }
+}
+
+@-moz-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+@-o-keyframes moveclouds {
+    0% { 
+        top: 500px;
+    }
+    100% { 
+        top: -500px;
+    }
+}
+
+@-o-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+
+/*Red Gradient*/
+.red-gradient {
+ /* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #D10E00 0%, #820101 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #D10E00 0%, #820101 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #D10E00 0%, #820101 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #D10E00), color-stop(1, #820101));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #D10E00 0%, #820101 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #D10E00 0%, #820101 100%);
+}
+
+.yellow-gradient {
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(bottom, #F8FF33 0%, #A2D611 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(bottom, #F8FF33 0%, #A2D611 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(bottom, #F8FF33 0%, #A2D611 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F8FF33), color-stop(1, #A2D611));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(bottom, #F8FF33 0%, #A2D611 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to top, #F8FF33 0%, #A2D611 100%);
+}
+.green-gradient {
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #51BA0B 0%, #A2D611 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #51BA0B 0%, #A2D611 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #51BA0B 0%, #A2D611 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #51BA0B), color-stop(1, #A2D611));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #51BA0B 0%, #A2D611 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #51BA0B 0%, #A2D611 100%);
+
+}
