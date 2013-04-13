@@ -1,2 +1,3 @@
 *.pyc
 gameapp/static/psd
+venv
