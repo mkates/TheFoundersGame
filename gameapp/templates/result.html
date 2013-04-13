@@ -8,15 +8,9 @@
 	</div>
 	<div class="well whitewell experts feedback">
 		<h6> What They Did Well </h6>
-		{% for q in qA %}
-			<p>{{q}}</p>
-		{% endfor %}
 	</div>
 	<div class="well whitewell teach feedback">
 		<h6> What They Did Poorly </h6>
-		{% for m in mV %}
-			<p>{{m}}</p>
-		{% endfor %}
 	</div>
 	<div class="clear"></div>
 	<div class="well whitewell playagain">
@@ -41,6 +35,25 @@ var count = function count(cc) {
 	}
 }
 
+var content = function(gameid) {
+	console.log('here');
+	$.get(static_url+'txt/game'+gameid+'.txt', function(data) {
+	    var txt = data.split("\n");
+	    for (var a=0; a < txt.length; a++) {
+	    	var array = txt[a].split(";");
+	    	//If its a comment
+	    	if (array[0] === 'C') {
+	    		if (array[1] === 'G') {
+	    			$('.experts').append('<p>'+array[2]+'</p>');
+	    		} else {
+	    			$('.teach').append('<p>'+array[2]+'</p>');
+	    		}
+	    	}
+	    }
+	    populate(questionarray);
+	}, 'text');
+}
+
 var setcolor = function(score) {
 	if (score < 40) {
 		$('#percent').css('color','red');
@@ -50,5 +63,7 @@ var setcolor = function(score) {
 		$('#percent').css('color','green');
 	}
 }
-count(0)
+count(0);
+content(gameid);
+
 </script>

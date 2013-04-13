@@ -3,12 +3,6 @@
 {% block headercss %}
  <link href="{{STATIC_URL}}css/homepage.css" rel="stylesheet" type="text/css" />
 <style>
-.form {
-	width: 300px;
-	border:1px solid red;
-	margin: -180px auto 180px auto;
-	padding-left: 50px;
-}
 
 </style>
 {% endblock %}
@@ -24,12 +18,15 @@
 	<a href="select.html"><img class="hero" src="{{STATIC_URL}}img/mainpage.png"/></a>
 	<form class="form" method='GET' action='select/'>
 		<select name="school">
-			<option> MIT Undergrad </option>
-			<option> UPenn Undergrad</option>
-			<option> Harvard Undergrad</option>
+			<option> MIT Student </option>
+			<option> MIT Sloan </option>
+			<option> UPenn Student</option>
+			<option> Harvard Student</option>
+			<option> Cornell Student </option>
 			<option> MIT Professor </option>
 			<option> I'm an Angel</option>
 			<option> I'm a VC </option>
+			<option> Other </option>
 		</select>
 		<button class="btn btn-large btn-info "> LET'S PLAY</button>
 	</form>

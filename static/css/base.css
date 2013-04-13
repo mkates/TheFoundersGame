@@ -66,6 +66,12 @@ body {
 	margin-top: 13px;
 	opacity: .8;
 }
+.nav p {
+	float: left;
+	line-height: 35px;
+	padding: 0 8px;
+	color: #bbb;
+}
 
 /**********/
 /* Footer */

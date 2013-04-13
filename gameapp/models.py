@@ -33,3 +33,11 @@ class Gamedata(models.Model):
 	meter8 = models.IntegerField(max_length=3)
 	meter9 = models.IntegerField(max_length=3)
 	meter10 = models.IntegerField(max_length=3)
+	
+	def player_id(self):
+		return self.player.id
+	player_id.short_description = 'Player ID'
+	
+	def school(self):
+		return self.player.school
+	school.short_description = 'School'

@@ -36,4 +36,6 @@ V;12;4
 V;13;1
 V;14;3
 
-
+C;G;Brush.io lacks a founder who has an experience building products, forcing them to outsource their development.
+C;G; Brush.io has no 
+C;B; They suck a big one
