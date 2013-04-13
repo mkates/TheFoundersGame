@@ -1,0 +1,54 @@
+<div class="clear"></div>
+<div class="main-result">
+	<div class="well whitewell score">
+			<h3> YOUR SCORE</h3>
+			<h4><span id="percent">0</span></h4>
+			<h4>/ 100</h4>
+			<!-- <h5 class="motivate"> You are a first class entrepreneur!</h5> -->
+	</div>
+	<div class="well whitewell experts feedback">
+		<h6> What They Did Well </h6>
+		{% for q in qA %}
+			<p>{{q}}</p>
+		{% endfor %}
+	</div>
+	<div class="well whitewell teach feedback">
+		<h6> What They Did Poorly </h6>
+		{% for m in mV %}
+			<p>{{m}}</p>
+		{% endfor %}
+	</div>
+	<div class="clear"></div>
+	<div class="well whitewell playagain">
+		<a href='/select' class="btn btn-large btn-danger playbutton"> Play Another Game</a>
+	</div>
+</div>
+
+<script>
+var score = {{ score }};
+var count = function count(cc) {
+	$('#percent').html(cc);
+	setcolor(cc);
+	if (cc < score) {
+		setTimeout(function() { 
+			count(++cc);
+		 }, (1/(score-cc))*1000);
+	}
+	if (cc === score) {
+		$('.feedback h6').fadeIn();
+		$('.feedback p').fadeIn();
+		$(".playbutton").fadeIn();
+	}
+}
+
+var setcolor = function(score) {
+	if (score < 40) {
+		$('#percent').css('color','red');
+	} else if  (score < 70) {
+		$('#percent').css('color','orange');
+	} else if  (score < 101) {
+		$('#percent').css('color','green');
+	}
+}
+count(0)
+</script>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block headercss %}
+ <link href="{{STATIC_URL}}css/play.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block headerjs %}
+{% endblock %}
+
+{% block content %}
+<div class='play-container'>
+	<div class="prompt well">
+		<img class="vc" src='{{STATIC_URL}}img/vc.png' />
+		<p class="question">You are Boston's leading venture capitalist, with a reputation of being a harsh critic of companies.
+		A lucky entrepreneur has begged their way into getting a meeting with you. You have ten minutes to squeeze them in for a pitch.
+		In fact, they are right outside your office.</p>
+		<a href="/talk/{{gameid}}" class="btn btn-success btn-large">Meet the entreprenuer</a>
+	</div>
+</div>
+{% endblock %}

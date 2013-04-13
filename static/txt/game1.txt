@@ -17,3 +17,23 @@ Q;11;Ma; Any indirect competitors?; Oral B and Crest both offer a sensor toothbr
 Q;12;Ma; What is the market size?; Currently, the United States alone spends $2.3 billion dollars on oral care products, and over $800 million on toothbrushes alone. If we can get just 1% of that market, we will have revenues in excess of $80 million / year.
 Q;13;Ma; Who has the major market share?; Colgate is the leader at 54%, while Dabur is at 14.3%, and HUL is 21%;
 Q;14;Ma; How does Brush.io want to enter the market?; To begin, Brush.io wants to sell its product directly online to minimize end user costs. 
+
+#QuestionValues
+#v;questionid,questionvalue
+
+V;1;6
+V;2;3
+V;3;2
+V;4;0
+V;5;6
+V;6;8
+V;7;6
+V;8;9
+V;9;8
+V;10;7
+V;11;2
+V;12;4
+V;13;1
+V;14;3
+
+

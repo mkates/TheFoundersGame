@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 import os
 PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-
+print PROJECT_ROOT
 ADMINS = (
      ('Mitchell Kates', 'your_email@example.com'),
 )
@@ -72,7 +72,6 @@ STATIC_URL = '/static/'
 print os.path.join(PROJECT_ROOT,'static')
 # Additional locations of static files
 STATICFILES_DIRS = (
-	#os.path.join(PROJECT_ROOT,'static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -129,6 +128,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'gameapp',
+    'django_extensions',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -161,12 +161,13 @@ LOGGING = {
 }
 
 # Parse database configuration from $DATABASE_URL
-import socket
-import dj_database_url
-if socket.gethostname().startswith('Mitchell'):
-    #Use Local Settings
-    LOCAL = True
-else: 
-	#Use heroku settings
-    DATABASES['default'] =  dj_database_url.config()
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#import socket
+#import dj_database_url
+# if socket.gethostname().startswith('Mitchell'):
+#     #Use Local Settings
+#     LOCAL = True
+# else: 
+# 	#Use heroku settings
+# 	LOCAL = False
+#     #DATABASES['default'] =  dj_database_url.config()
+#     #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

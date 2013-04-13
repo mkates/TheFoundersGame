@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block headercss %}
+ <link href="{{STATIC_URL}}css/select.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block headerjs %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="select-container">
+	<a href='/play/1'><div class="game well">
+		<h1> Brush.io</h1>
+		<h2> The future of toothbrushes</h2>
+		<img class="nerd" src='{{STATIC_URL}}img/cartoonnerdfeathered.png' />
+		<h3 class="easy">Easy</h3>
+	</div></a>
+	<a href='/play/2'><div class="game well">
+		<h1> MambaTech</h1>
+		<h2> Fashion shorts for fashionistas</h2>
+		<img class="nerd" src='{{STATIC_URL}}img/fashiongirlfeathered.png' />
+		<h3 class="medium">Medium</h3>
+	</div></a>
+	<a href='/play/3'><div class="game well">
+		<h1> Kerplunk</h1>
+		<h2> How you like them apples</h2>
+		<img src='{{STATIC_URL}}img/larryfeathered.png' />
+		<h3 class="hard">Hard</h3>
+	</div></a>
+	<p>Schol: {{school}}</p>
+	<div class="clear"></div>
+</div>
+{% endblock %}

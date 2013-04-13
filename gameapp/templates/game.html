@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+
+{% block headerjs %}
+<script>
+var static_url = {{STATIC_URL}};
+var imgurl = "{{STATIC_URL}}img/{{img}}"
+</script>
+<script src="{{STATIC_URL}}js/gameplay.js"></script>
+<script>
+$(document).ready(function() {
+	$('.resultbutton').click(function() {
+		$.get("/result/", { 
+			'questionsAsked':questionsAsked.toString(), 
+			'pointvalues':pointvalues.toString(), 
+			'meterValue':meterValue.toString()},
+			function(data) {
+				$('.game-container').css('display','none');
+				$('.resultsdiv').append(data);
+		});
+	});
+});
+</script>
+{% endblock %}
+
+{% block headercss %}
+<link href="{{STATIC_URL}}css/ichat.css" rel="stylesheet" type="text/css" />
+<link href="{{STATIC_URL}}css/game.css" rel="stylesheet" type="text/css" />
+<link href="{{STATIC_URL}}css/bubbles.css" rel="stylesheet" type="text/css" />
+<link href="{{STATIC_URL}}css/result.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+{% block headerright %}
+<div class="nav">
+	<p>{{school}}</p>
+	<a href="#" class="btn reset">Reset Game</a>
+	<a href="#" class="btn btn-danger play">How to Play</a>
+</div>	
+{% endblock %}
+
+{% block content %}
+<div class="resultsdiv"></div>
+<div class="game-container">
+	<div class="well whitewell status">
+			<div class="coin-container">
+				<img class="coins" src="{{STATIC_URL}}img/coins.png"/>
+				<h4 class="coinsleft">10</h4>
+				<div class="details">
+					<p>COINS</p>
+					<p>LEFT</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			<div class="progress-container">
+				<div class="progressbg">
+					<div class="prog green-gradient">
+						<div class="bubblex x1"></div>
+						<div class="bubblex x2"></div>
+						<div class="bubblex x3"></div>
+						<div class="bubblex x4"></div>
+						<div class="bubblex x5"></div>
+						<div class="bubblex x6"></div>
+						<div class="bubblex x7"></div>
+						<div class="bubblex x8"></div>
+						<div class="bubblex x9"></div>
+					</div>
+				</div>
+				<div class="slider">
+					<div id="slider-vertical"></div>
+				</div>
+			</div>
+			<div class="statusword-container">
+				<div class="statusword" id="status7">BRILLIANT!!</div>
+				<div class="statusword" id="status6">VERY GOOD!</div>
+				<div class="statusword" id="status5">GOOD</div>
+				<div class="statusword selected" id="status4">ABOVE AVERAGE</div>
+				<div class="statusword" id="status3">AVERAGE</div>
+				<div class="statusword" id="status2">BELOW</div>
+				<div class="statusword" id="status1">POOR</div>
+				<div class="statusword" id="status0">AWFUL</div>
+			</div>
+			<div class="clear"></div>
+			<img class="moneybag" src="{{STATIC_URL}}img/moneybag.png"/>
+			<!-- <a href="result.html" class="btn btn-success btn-large finaldecision"> Make Final Decision</a> -->
+	</div>
+	<div id="answers" class="well whitewell answers">
+			<div class="helpertext">
+				<p> Welcome to the Mamba Venture Capital Firm</p>
+			</div>
+			<div class="response response-left">
+				<table border="0" cellspacing="0" cellpadding="0">
+				  <tr>
+				   <td class="avatar">
+					 <img src="{{STATIC_URL}}img/busguy.png"/>
+				   </td>
+				   <td>
+					 <div class="bubble bubbleleft">
+						<p>Elevator pitch. 10 seconds. GO.</p>
+					</div>
+				   </td>
+				 </tr>
+				</table>
+			 </div>
+			 <div class="response response-right">
+				<table border="0" cellspacing="0" cellpadding="0">
+				  <tr>
+				   <td>
+					 <div class="bubble bubbleright">
+						<p>Brush.io wants to develop the next generation of smart toothbrushes. Using a bluetooth connected toothbrush, consumers can track and record their toothbrush habits, saving them big money on health insurance and helping them reach brighter, cleaner smiles.</p>
+					</div>
+				   </td>
+				    <td class="avatar">
+					 <img src="{{STATIC_URL}}img/{{img}}"/>
+				   </td>
+				 </tr>
+				</table>
+			 </div>
+		</div>
+	<div class="well whitewell questions">
+			<div class="questionvisible">
+				<p class="advice">Select questions you want the entrepreneur to answer. Each question costs 1 coin!</p>
+				<div class="question-menu">
+					<div id="questions1" class="option bordertop">Founders</div>
+					<div id="questions2" class="option">Idea</div>
+					<div id="questions3" class="option">Market</div>
+					<div id="questions4" class="option">Financials</div>
+					<div id="questions5" class="option">Intangibles</div>
+				</div>
+				<div class="question-button-container">
+				<div class="questions1">
+					<table>
+						<tr>
+							<td class="question1_1"></td>
+							<td class="question1_2"></td>
+
+						</tr>
+						<tr>
+							<td class="question1_3"></td>
+							<td class="question1_4"></td>
+						</tr>
+						<tr>
+							<td class="question1_5"></td>
+							<td class="question1_6"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="questionhide questions2">
+					<table>
+						<tr>
+							<td class="question2_1"></td>
+							<td class="question2_2"></td>
+						</tr>
+						<tr>
+							<td class="question2_3"></td>
+							<td class="question2_4"></td>
+						</tr>
+						<tr>
+							<td class="question2_5"></td>
+							<td class="question2_6"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="questionhide questions3">
+					<table>
+						<tr>
+							<td class="question3_1"></td>
+							<td class="question3_2"></td>
+						</tr>
+						<tr>
+							<td class="question3_3"></td>
+							<td class="question3_4"></td>
+						</tr>
+						<tr>
+							<td class="question3_5"></td>
+							<td class="question3_6"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="questionhide questions4">
+					<table>
+						<tr>
+							<td class="question4_1"></td>
+							<td class="question4_2"></td>
+
+						</tr>
+						<tr>
+							<td class="question4_3"></td>
+							<td class="question4_4"></td>
+						</tr>
+						<tr>
+							<td class="question4_5"></td>
+							<td class="question4_6"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="questionhide questions5">
+					<table>
+						<tr>
+							<td class="question5_1"></td>
+							<td class="question5_2"></td>
+						</tr>
+						<tr>
+							<td class="question5_3"></td>
+							<td class="question5_4"></td>
+						</tr>
+						<tr>
+							<td class="question5_5"></td>
+							<td class="question5_6"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			</div>
+			<div class="questionblackedout" id="blackoutfinal">
+				<p>You are out of coins! Slide the Invest-o-Meter to your final opinion, and then click See the Results</p>
+				<button class="btn btn-success btn-large resultbutton">See the Results</button>
+				<div class="clear"></div>
+			</div>
+			<div class="questionblackedout" id="questionblackedout">
+				<p>Use the buttons below OR slide the bar on the right based on how you think this new information
+				affects how good the idea is</p>
+				<div class="effectoptions">
+					<button class="btn btn-large btn-danger negativeeffect">Hurts Idea</button>
+					<button class="btn btn-large btn-warning noeffect">No Impact</button>
+					<button class="btn btn-large btn-success positiveeffect">Helps Idea</button>
+				</div>
+				<div class="clear"></div>
+				<!-- <img src="{{STATIC_URL}}img/arrow.png"/> -->
+			</div>
+		</div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
