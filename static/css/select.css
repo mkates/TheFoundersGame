@@ -17,9 +17,13 @@
 	background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #F0F0F0 100%);
 	background-image: linear-gradient(to top, #FFFFFF 0%, #F0F0F0 100%);
 }
-.game img {
+.disable:hover {
+	background: white;
+}
+.nerd {
 	height: 200px;
 }
+
 .game h1 {
 	color: #444;
 	font-size: 22px;

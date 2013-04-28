@@ -49,19 +49,40 @@
 .teach p {
 	margin-left: 75px;
 	margin-right: 20px;
+	color: #777;
+	line-height: 20px;
 }
-.experts h6 {
+.experts h5 {
 	color: green;
 	padding-left: 20px;
+	font-size: 22px;
+	font-weight: 900;
+}
+.experts h6 {
+	margin-right: 60px;
 }
 .experts p {
 	margin-right: 75px;
 	margin-left: 20px;
+	color: #777;
+	line-height: 20px;
 }
-.teach h6 {
+.teach h5 {
 	color: red;
 	padding-left: 70px;
 }
+.teach h6 {
+	padding-left: 55px;
+}
+h6 {
+	font-weight: 800;
+	color: #444;
+	font-size: 14px;
+	display: none;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
 .motivate {
 	display: none;
 	font-size: 18px;
@@ -69,23 +90,24 @@
 }
 .feedback {
 	min-height: 330px;
-	margin-top: -250px;
+	margin-top: -260px;
 	position: relative;
 	z-index: 0;
 }
-.feedback h6 {
+.feedback h5 {
 	font-size: 20px;
 	font-weight: 900;
-	margin: 5px 0 10px 0;
-	display: none;
+	margin: 5px 0 25px 0;
 }
 .feedback p {
-	padding: 10px 0;
+	padding: 4px 0;
 	display: none;
+	font-size: 12px;
+	line-height: 16px;
 }
 .playagain {
 	text-align: center;
-	padding: 30px 20px;
+	padding: 20px 20px;
 }
 .playbutton {
 	display:none;

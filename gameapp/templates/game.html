@@ -3,16 +3,17 @@
 {% block headerjs %}
 <script>
 var static_url = {{STATIC_URL}};
-var imgurl = "{{STATIC_URL}}img/{{img}}"
-var gameid = {{ gameid }}
+var imgurl = "{{STATIC_URL}}img/{{img}}";
+var gameid = {{ gameid }};
+var starttext = {{ gameid }};
 </script>
 <script src="{{STATIC_URL}}js/gameplay.js"></script>
 <script>
 $(document).ready(function() {
 	$('.resultbutton').click(function() {
+		meterValue.push($( "#slider-vertical" ).slider('value'));
 		$.get("/result/", { 
 			'questionsAsked':questionsAsked.toString(), 
-			'pointvalues':pointvalues.toString(), 
 			'meterValue':meterValue.toString(),
 			'gameid':gameid.toString()},
 			function(data) {
@@ -48,7 +49,7 @@ $(document).ready(function() {
 				<img class="coins" src="{{STATIC_URL}}img/coins.png"/>
 				<h4 class="coinsleft">10</h4>
 				<div class="details">
-					<p>COINS</p>
+					<p>QUESTIONS</p>
 					<p>LEFT</p>
 				</div>
 				<div class="clear"></div>
@@ -81,6 +82,7 @@ $(document).ready(function() {
 				<div class="statusword" id="status2">BELOW</div>
 				<div class="statusword" id="status1">POOR</div>
 				<div class="statusword" id="status0">AWFUL</div>
+				<div class='btn noimpact-container noeffect'>No Effect</div>
 			</div>
 			<div class="clear"></div>
 			<img class="moneybag" src="{{STATIC_URL}}img/moneybag.png"/>
@@ -98,7 +100,7 @@ $(document).ready(function() {
 				   </td>
 				   <td>
 					 <div class="bubble bubbleleft">
-						<p>Elevator pitch. 10 seconds. GO.</p>
+						<p>Tell me a little bit about your company</p>
 					</div>
 				   </td>
 				 </tr>
@@ -109,7 +111,7 @@ $(document).ready(function() {
 				  <tr>
 				   <td>
 					 <div class="bubble bubbleright">
-						<p>Brush.io wants to develop the next generation of smart toothbrushes. Using a bluetooth connected toothbrush, consumers can track and record their toothbrush habits, saving them big money on health insurance and helping them reach brighter, cleaner smiles.</p>
+						<p>{{ starttext }}</p>
 					</div>
 				   </td>
 				    <td class="avatar">
@@ -121,13 +123,13 @@ $(document).ready(function() {
 		</div>
 	<div class="well whitewell questions">
 			<div class="questionvisible">
-				<p class="advice">Select questions you want the entrepreneur to answer. Each question costs 1 coin!</p>
+				<p class="advice">Select a question from the following categories: Team, Idea, Market, Financials, or Competition</p>
 				<div class="question-menu">
-					<div id="questions1" class="option bordertop">Founders</div>
+					<div id="questions1" class="option bordertop">Team</div>
 					<div id="questions2" class="option">Idea</div>
 					<div id="questions3" class="option">Market</div>
 					<div id="questions4" class="option">Financials</div>
-					<div id="questions5" class="option">Intangibles</div>
+					<div id="questions5" class="option">Funding & Exit</div>
 				</div>
 				<div class="question-button-container">
 				<div class="questions1">
@@ -220,15 +222,16 @@ $(document).ready(function() {
 				<div class="clear"></div>
 			</div>
 			<div class="questionblackedout" id="questionblackedout">
-				<p>Use the buttons below OR slide the bar on the right based on how you think this new information
-				affects how good the idea is</p>
-				<div class="effectoptions">
+				<p>Slide the bar based on this company's investment potential. If your view of the company has not changed, click no effect</p>
+				<!-- 
+<div class="effectoptions">
 					<button class="btn btn-large btn-danger negativeeffect">Hurts Idea</button>
 					<button class="btn btn-large btn-warning noeffect">No Impact</button>
 					<button class="btn btn-large btn-success positiveeffect">Helps Idea</button>
 				</div>
+ -->
 				<div class="clear"></div>
-				<!-- <img src="{{STATIC_URL}}img/arrow.png"/> -->
+				<img src="{{STATIC_URL}}img/arrow.png"/>
 			</div>
 		</div>
 </div>

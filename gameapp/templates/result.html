@@ -1,21 +1,28 @@
 <div class="clear"></div>
 <div class="main-result">
+	<div class="well whitewell playagain">
+		<a href='/select' class="btn btn-large btn-danger playbutton"> Play Another Game</a>
+	</div>
 	<div class="well whitewell score">
 			<h3> YOUR SCORE</h3>
 			<h4><span id="percent">0</span></h4>
 			<h4>/ 100</h4>
-			<!-- <h5 class="motivate"> You are a first class entrepreneur!</h5> -->
 	</div>
 	<div class="well whitewell experts feedback">
-		<h6> What They Did Well </h6>
+		<h5> What You Did Well </h5>
+		{% for dw in didWell %}
+			<h6>{{ dw.question }}</h6>
+			<p> {{ dw.answer }}</p>
+		{% endfor %}
 	</div>
 	<div class="well whitewell teach feedback">
-		<h6> What They Did Poorly </h6>
+		<h5> What You Did Poorly </h5>
+		{% for dp in didPoor %}
+			<h6>{{ dp.question }}</h6>
+			<p> {{ dp.answer }}</p>
+		{% endfor %}
 	</div>
 	<div class="clear"></div>
-	<div class="well whitewell playagain">
-		<a href='/select' class="btn btn-large btn-danger playbutton"> Play Another Game</a>
-	</div>
 </div>
 
 <script>

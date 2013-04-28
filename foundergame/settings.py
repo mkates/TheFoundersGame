@@ -162,7 +162,8 @@ LOGGING = {
 # Parse database configuration from $DATABASE_URL
 import socket
 import dj_database_url
-if socket.gethostname().startswith('Mitchell'):
+print socket.gethostname()
+if socket.gethostname().startswith('lca'):
     #Use Local Settings
 	LOCAL = True
 else: 

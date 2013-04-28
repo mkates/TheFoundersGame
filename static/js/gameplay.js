@@ -74,15 +74,9 @@ $(document).ready(function() {
 	    	} else if (array[0] === 'FQ') {
 	    		var ques = new question(array[1],array[2],array[3],array[4],nextq,false);
 	    		questionarray.push(ques);
-	    	} else if (array[0] == 'V') {
-	    		qid = array[1]
-	    		value = array[2]
-	    		pointvalues[qid] = value
-	    	}
-	    	
-	    	
+	    	}  	
 	    }
-	    populate(questionarray);
+	    populate(questionarray,'black');
 	}, 'text');
 });
 
@@ -91,19 +85,25 @@ $(document).ready(function() {
 //************************************
 //**Populate question well************
 //************************************
-var fo = 0; var id = 0; var ma = 0; var fi = 0;
+var te = 0; var id = 0; var ma = 0; var fi = 0; var ex = 0;
 
-var populate = function(questionarray) {
+var populate = function(questionarray,color) {
 	for (var q=0; q < questionarray.length; q++) {
 		var qa = questionarray[q];
 		if (qa.visible) {
 			var categoryid;
 			var value;
-			if (qa.category == "Fo") { categoryid = 1; fo+=1; value = fo;};
+			if (qa.category == "Te") { categoryid = 1; te+=1; value = te;};
 			if (qa.category == "Id") { categoryid = 2; id+=1; value = id;};
 			if (qa.category == "Ma") { categoryid = 3; ma+=1; value = ma;};
 			if (qa.category == "Fi") { categoryid = 4; fi+=1; value = fi;};
-			$(".question"+categoryid+"_"+value).append("<button class='questionbutton btn btn-orange'>"+qa.question+"</button>");
+			if (qa.category == "Ex") { categoryid = 5; ex+=1; value = ex;};
+			if (color === 'blue') {
+				var btncolor = 'btn-blue';
+			} else {
+				var btncolor = 'btn-orange';
+			}
+			$(".question"+categoryid+"_"+value).append("<button class='questionbutton btn "+btncolor+"'>"+qa.question+"</button>");
 		};
 	}
 	buttonFunctionality();
@@ -129,7 +129,6 @@ var barValue = 4;
 //Storing User Selections
 var questionsAsked = [];
 var meterValue = [];
-var pointvalues = [0];
 
 //************************************
 //********Modal Windows***************
@@ -255,7 +254,7 @@ var buttonFunctionality = function() {
 						for (var q=0; q < questionarray.length; q++) {
 							if (questionarray[q].id === nextq) {
 								questionarray[q].visible = true;
-								populate([questionarray[q]]);
+								populate([questionarray[q]],'blue');
 							}
 						}					
 					};
@@ -287,7 +286,9 @@ var decrementCoins = function() {
 //************************************
 $(document).ready(function() {
 		$(".noeffect").click(function() {
-			$(".questionblackedout").fadeOut();
+			if (coins > 0) {
+				$(".questionblackedout").fadeOut();
+			};
 		});
 		$(".positiveeffect").click(function() {
 			reDrawBars(Math.min(7,barValue+1));
