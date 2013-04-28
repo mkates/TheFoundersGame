@@ -166,7 +166,7 @@ if socket.gethostname().startswith('lca'):
     #Use Local Settings
 	LOCAL = True
 else: 
-# 	#Use heroku settings
+ 	#Use heroku settings
 	LOCAL = False
-	#DATABASES['default'] =  dj_database_url.config()
-	#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+	DATABASES['default'] =  dj_database_url.config()
+	SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
