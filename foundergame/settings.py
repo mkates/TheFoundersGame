@@ -14,7 +14,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': "foundergamdb", # Or path to database file if using sqlite3.
+        'NAME': "foundergamedb", # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'mitchellkates',
         'PASSWORD': '',
@@ -69,7 +69,6 @@ STATIC_ROOT = 'static'
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
-print os.path.join(PROJECT_ROOT,'static')
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
@@ -169,5 +168,5 @@ if socket.gethostname().startswith('lca'):
 else: 
 # 	#Use heroku settings
 	LOCAL = False
-	DATABASES['default'] =  dj_database_url.config()
-	SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+	#DATABASES['default'] =  dj_database_url.config()
+	#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

@@ -83,13 +83,13 @@ def result(request):
 				try:
 					request.session['school']
 					player = Player(school=str(request.session['school']))
-					#player.save()
+					player.save()
 				except:
 					player = Player(school="Undefined")
-					#player.save()
+					player.save()
 						
-			#gamedata = Gamedata(player=player,gameID=gameID,gamescore=totalscore,question1=qA[0], question2=qA[1], question3=qA[2], question4=qA[3], question5=qA[4], question6=qA[5], question7=qA[6], question8=qA[7], question9=qA[8], question10=qA[9], meter1=mV[0], meter2=mV[1], meter3=mV[2],meter4=mV[3],meter5=mV[4], meter6=mV[5], meter7=mV[6], meter8=mV[7], meter9=mV[8], meter10=mV[9])
-			#gamedata.save()
+			gamedata = Gamedata(player=player,gameID=gameID,gamescore=totalscore,questions = str(qA), meters=str(mV))
+			gamedata.save()
 		except:
 			print sys.exc_info()[0]
 	return render_to_response('result.html',{"qA":qA,'mV':mV,'score':totalscore,'didWell':didWell,'didPoor':didPoor},context_instance=RequestContext(request))
