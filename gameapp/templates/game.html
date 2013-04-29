@@ -36,7 +36,7 @@ $(document).ready(function() {
 {% block headerright %}
 <div class="nav">
 	<p>{{school}}</p>
-	<a href="#" class="btn reset">Reset Game</a>
+	<!-- <a href="#" class="btn reset">Reset Game</a> -->
 	<a href="#" class="btn btn-danger play">How to Play</a>
 </div>	
 {% endblock %}
@@ -82,7 +82,6 @@ $(document).ready(function() {
 				<div class="statusword" id="status2">BELOW</div>
 				<div class="statusword" id="status1">POOR</div>
 				<div class="statusword" id="status0">AWFUL</div>
-				<div class='btn noimpact-container noeffect'>No Effect</div>
 			</div>
 			<div class="clear"></div>
 			<img class="moneybag" src="{{STATIC_URL}}img/moneybag.png"/>
@@ -223,13 +222,12 @@ $(document).ready(function() {
 			</div>
 			<div class="questionblackedout" id="questionblackedout">
 				<p>Slide the bar based on this company's investment potential. If your view of the company has not changed, click no effect</p>
-				<!-- 
-<div class="effectoptions">
-					<button class="btn btn-large btn-danger negativeeffect">Hurts Idea</button>
+				<div class="effectoptions">
+					<!-- <button class="btn btn-large btn-danger negativeeffect">Hurts Idea</button> -->
 					<button class="btn btn-large btn-warning noeffect">No Impact</button>
-					<button class="btn btn-large btn-success positiveeffect">Helps Idea</button>
+					<!-- <button class="btn btn-large btn-success positiveeffect">Helps Idea</button> -->
 				</div>
- -->
+
 				<div class="clear"></div>
 				<img src="{{STATIC_URL}}img/arrow.png"/>
 			</div>

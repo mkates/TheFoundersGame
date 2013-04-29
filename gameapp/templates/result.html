@@ -1,7 +1,17 @@
 <div class="clear"></div>
 <div class="main-result">
 	<div class="well whitewell playagain">
+		<p> You rated this company <span>{{ rating }}</span>. This is how venture capitalists rated this idea:</p>
+		<div class='bar'>
+			{% for i in resultstext %}
+			<div class='baritem baritem{{ i.number }} btn-blue' style='height: {{i.height }}px'><p>{%if i.value > 0 %}{{i.value}}%{% endif %}</p></div>
+			{% endfor %}
+		</div>
+<!-- 
 		<a href='/select' class="btn btn-large btn-danger playbutton"> Play Another Game</a>
+ -->
+
+		<div class='bartext'><p>Awful</p><p>Poor</p><p>Below</p><p>Average</p><p>Above</p><p>Good</p><p>Great</p><p>Brilliant</p></div>
 	</div>
 	<div class="well whitewell score">
 			<h3> YOUR SCORE</h3>
@@ -12,6 +22,7 @@
 		<h5> What You Did Well </h5>
 		{% for dw in didWell %}
 			<h6>{{ dw.question }}</h6>
+			<h6 class='response'>Your Response: {{ dw.response }}</h6>
 			<p> {{ dw.answer }}</p>
 		{% endfor %}
 	</div>
@@ -19,6 +30,7 @@
 		<h5> What You Did Poorly </h5>
 		{% for dp in didPoor %}
 			<h6>{{ dp.question }}</h6>
+			<h6 class='response'>Your Response: {{ dp.response }}</h6>
 			<p> {{ dp.answer }}</p>
 		{% endfor %}
 	</div>

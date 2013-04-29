@@ -73,6 +73,7 @@ def result(request):
 		totalscore = analysis[0]
 		didWell = analysis[1]
 		didPoor = analysis[2]
+		results = resultsText(gameID)
 		#Get player from cookies
 		player = 0
 		try:
@@ -92,8 +93,23 @@ def result(request):
 			gamedata.save()
 		except:
 			print sys.exc_info()[0]
-	return render_to_response('result.html',{"qA":qA,'mV':mV,'score':totalscore,'didWell':didWell,'didPoor':didPoor},context_instance=RequestContext(request))
+	print results
+	return render_to_response('result.html',{'rating':'Average',"qA":qA,'mV':mV,'score':totalscore,'resultstext':results,'didWell':didWell,'didPoor':didPoor},context_instance=RequestContext(request))
 
+
+
+def resultsText(gameID):
+	results = []
+	print gameID
+	if int(gameID) == 1:
+		heights = [50,30,10,10,0,0,0,0]
+		for i in range(1,9):
+			value = {}
+			value['value'] = heights[i-1]
+			value['number'] = i
+			value['height'] = heights[i-1]
+			results.append(value)
+	return results
 
 
 # Generates a score from 0-9 for a given slider scale
@@ -144,6 +160,7 @@ def analyze(gameID,qA,mV):
 		helptext = {}
 		helptext['question'] = questions[str(qA[j])]
 		helptext['answer'] = answers[str(qA[j])][2]
+		helptext['response'] = response(mov)
 		if scoreadd == 10:
 			if len(helptext['answer']) > 5:
 				didWell.append(helptext)
@@ -155,6 +172,14 @@ def analyze(gameID,qA,mV):
 	finalscore = math.ceil(.3*quesscore + .7*ratescore)
 	return [finalscore,didWell,didPoor]
 
+def response(val):
+	if val < 0:
+		return 'Helps Company'
+	elif val > 0:
+		return 'No Effect'
+	else:
+		return 'Hurts Company'
+		
 #Auxiliary Movement Function
 def movement(prev_value,new_value):
 	change = new_value - prev_value

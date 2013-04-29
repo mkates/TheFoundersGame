@@ -1,4 +1,3 @@
-
 //************************************
 //*****Slider Functionality***********
 //************************************
@@ -113,7 +112,7 @@ var populate = function(questionarray,color) {
 //************************************
 //********Global variables************
 //************************************
-var coins = 10;
+var coins = 1;
 var title;
 var questionarray = [];
 var followquestionarray = [];
@@ -125,7 +124,7 @@ var question = function (id,category,question,answer,nextquestionid,visible) {
 	this.nextquestion = nextquestionid;
 	this.visible = visible;
 }
-var barValue = 4;
+var barValue = 5;
 //Storing User Selections
 var questionsAsked = [];
 var meterValue = [];
